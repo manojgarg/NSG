@@ -1,0 +1,497 @@
+<div class="astro-form">
+    <div class="animated fadeInRight">
+        <div  class="form-group">
+
+            <div style="line-height:1px;"> &nbsp;</div>
+            <div class="row">
+                <h4>
+                    Registration for Astrology
+                </h4>
+            </div>
+           
+              
+            <form name="form" >
+                <div class="row marginBasic">
+
+                    <div class="form-group col-xs-3">
+                        <label for="EmailAddress">Email Address</label>
+
+                        <input type="text"
+                                required
+                                class="form-control"
+                                id="emailAddress"
+                                name="emailAddress"
+                               [(ngModel)]="astrology.emailAddress"
+                               pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+                               #emailAddress="ngModel"
+                             
+                                    />
+
+
+                        <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="emailAddress.errors.required">
+                                Email Address is required.
+                            </div>
+                            <div *ngIf="emailAddress.errors.pattern">
+                                Email Address is not valid.
+                            </div>
+                            </div>
+
+                        </div>
+                </div>
+               
+                <div class="row marginBasic">
+
+                    <div class="form-group col-xs-3">
+                        <label for="FullName">Full Name</label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="fullName"
+                               name="fullName"
+                                [(ngModel)]="astrology.fullName"
+                               pattern="^[A-z\s]+$"
+                               #fullName="ngModel"
+                              required
+
+                                  />
+
+                        <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="fullName.errors.required">
+                                Full Name is required.
+                            </div>
+                            <div *ngIf="fullName.errors.pattern">
+                                Full Name is not valid.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row marginBasic">
+
+                    <div class="form-group col-xs-8 col-md-4 col-lg-3">
+                        <label for="MobileNumber">Mobile Number</label>
+
+                        <input type="number"
+                                min="0"
+                               class="form-control"
+                               id="mobileNumber"
+                               name="mobileNumber"
+                               required
+                              
+                              
+                                 [(ngModel)]="astrology.mobileNumber"
+                              
+                               #mobileNumber="ngModel"
+
+                                   />
+
+
+                        <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="mobileNumber.errors.required">
+                                Mobile Number is required.
+                            </div>
+                            <div *ngIf="mobileNumber.errors.minlength">
+                               Minimum eight numbers.
+                            </div>
+
+                          
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="DateOFBirth">Date of Birth</label>
+                       
+                        <my-date-picker name="mydate" [options]="myDatePickerOptions"
+                                  [(ngModel)]="astrology.dateOfBirth" 
+                                        required
+                                          #dateOfBirth="ngModel"
+                                        ></my-date-picker>
+
+                        <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="dateOfBirth.errors.required">
+                               DOB is required.
+                            </div>
+                           
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="TimeOfBirth">Time Of Birth</label>
+
+                        <div class="form-group">
+                            <select  
+
+                                     [(ngModel)]="astrology.timeHours" 
+                                        required
+                                          #timeHours="ngModel"
+                            name="timeHour" id="timeHour">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                            </select>
+
+                         
+
+                            <select  
+                                      
+
+                                      [(ngModel)]="astrology.timeMinutes" 
+                                        required
+                                          #timeMinutes="ngModel"
+                            name="timeMinute" id="timeMinute">
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">20</option>
+
+
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+
+
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+
+
+                            </select>
+
+
+                            <div *ngIf="timeHours.invalid && (timeHours.dirty || timeHours.touched)"
+                                 class="alert alert-danger">
+
+                                <div *ngIf="timeHours.errors.required">
+                                    Time Hours are required.
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+                            <div *ngIf="timeMinutes.invalid && (timeMinutes.dirty || timeMinutes.touched)"
+                                 class="alert alert-danger">
+
+                                <div *ngIf="timeMinutes.errors.required">
+                                    Time Minutes are required.
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="Gender">Gender</label>
+
+                       <select class="form-control" 
+
+                                [(ngModel)]="astrology.gender" 
+                                        required
+                                          #gender="ngModel"
+
+                       id="gender" name="gender">
+                           <option value=""> Choose
+                           </option>
+                           <option value="Female"> Female
+                           </option>
+                           <option value="Male"> Male
+                           </option>
+                       </select>
+
+
+
+                        <div *ngIf="gender.invalid && (gender.dirty || gender.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="gender.errors.required">
+                               Gender are required.
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="Address">Postal Address</label>
+
+                        <textarea id="address" name="address" class=form-control>
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="Country">Country</label>
+
+                        <!--<select class="form-control m-b" style="margin-left: 8px;" [(ngModel)]="selectedOrganizationId" 
+                        (change)="onOrganizationChange($event)" name="organization">
+                            <option *ngFor="let org of organizations" [ngValue]="org.id">{{org.name}}</option>
+                        </select>-->
+
+
+                        <select class="form-control" id="countryId"
+                                (change)="onCountrySelect($event.target.value)"
+
+                                    required 
+                                          #countryId="ngModel"
+                                
+                          name="countryId" [(ngModel)]="astrology.countryId" >
+                            <option value="">--Select--</option>
+                            <option *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+                        </select>
+
+
+                        <div *ngIf="countryId.invalid && (countryId.dirty || countryId.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="countryId.errors.required">
+                                Country is required.
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="State">State</label>
+
+                        <select class="form-control" id="state" name="state" 
+                                (change)="onStateSelect($event.target.value)"
+                                [(ngModel)]="astrology.stateId"
+
+                                 required
+                                          #stateId="ngModel"
+                        >
+                            <option value="">--Select--</option>
+                            <option *ngFor="let state of states" [ngValue]="state.id">{{state.name}}</option>
+                        </select>
+
+
+                        <div *ngIf="stateId.invalid && (stateId.dirty || stateId.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="stateId.errors.required">
+                                State is required.
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="city">District / City</label>
+
+                        <select class="form-control" id="city" name="city"
+
+                                 required
+                                          #cityId="ngModel"
+                                         [(ngModel)]="astrology.cityId"
+                        >
+                            <option value="">--Select--</option>
+                            <option *ngFor="let city of cities" [ngValue]="city.id">{{city.name}}</option>
+
+                        </select>
+
+
+                        <div *ngIf="cityId.invalid && (cityId.dirty || cityId.touched)"
+                             class="alert alert-danger">
+
+                            <div *ngIf="cityId.errors.required">
+                                City is required.
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row marginBasic">
+
+                    <div class="form-group  col-xs-8 col-md-4 col-lg-3">
+                        <label for="Remarks">Remarks</label>
+
+                        <textarea id="remarks" name="remarks" class=form-control>
+                        </textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="row marginBasic">
+
+
+                    <div class="form-group col-xs-8 col-md-4 col-lg-3" >
+                        <button class="btn btn-primary" type="submit"
+                              >
+                            Submit & Register
+                        </button>
+                         </div>
+                    <!--<div class="col-lg-10" [hidden]="!isSaving">
+                        <b>Saving...</b>
+                    </div>
+                    <div class="col-lg-10" [hidden]="!isSaved">
+                        <b>Message saved successfully</b>
+                    </div>
+                    <div class="col-lg-10 error-color" [hidden]="!isSavedFailed">
+                        Message saving failed...
+                    </div>-->
+                </div>
+
+
+            </form>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">  </div>
+                <div class="loading col-lg-6 pull-left" *ngIf="isLoading">
+                    Loading&#8230;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

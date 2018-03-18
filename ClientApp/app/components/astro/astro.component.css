@@ -1,0 +1,36 @@
+div.astro-form div.assigned-list {
+    height: 100px;
+    overflow-y: scroll;
+    width: 350px;
+    border: 1px solid #dedede;
+    border-right: none;
+    background: white
+}
+
+    div.astro-form div.assigned-list ul {
+        list-style: none;
+        margin-left: -22px
+    }
+
+        div.astro-form div.assigned-list ul > li > label > input {
+            margin: 0 10px 0 0
+        }
+
+
+h4 {
+    color: #497DBB;
+    line-height: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px
+}
+
+.marginHeader {
+    margin-top: 50px
+}
+.marginBasic {
+    margin-left: 20px
+}
+
+.error-color {
+    color: red
+}
